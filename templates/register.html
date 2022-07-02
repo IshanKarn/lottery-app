@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <form action="{{ url_for('addrec') }}" method = 'POST'>
+            <h3>Register to participate.</h3>
+            <hr>
+
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+            {% endfor %}
+
+            First Name<br>
+            <input type="text" name='fname'/><br>
+
+            Last Name<br>
+            <input type="text" name='lname'/><br>
+
+            Phone<br>
+            <input type="tel" name='phone' pattern="[0-9]{10}" required/><br>
+
+            Address<br>
+            <textarea name='address'></textarea><br>
+
+            Email<br>
+            <input type='email' name='email'/><br>
+            
+            <input type='submit' value='Submit'/><br>
+        </form>
+    </body>
+</html>
